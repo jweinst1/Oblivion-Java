@@ -2,6 +2,8 @@
  * Created by Josh on 12/25/15.
  * Class to implement a statement to be interpreted
  */
+package Interpret;
+
 public class Statement {
 
     public String line;

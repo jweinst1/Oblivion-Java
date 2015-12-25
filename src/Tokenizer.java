@@ -8,5 +8,6 @@ import java.util.regex.Matcher;
 
 public class Tokenizer {
     protected Pattern plus = Pattern.compile("^(.+) plus (.+)$");
-    
+    protected Pattern create = Pattern.compile("^create (.+) (.+)$");
+
 }

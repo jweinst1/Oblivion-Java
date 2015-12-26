@@ -29,4 +29,8 @@ public class localdict {
     public boolean checkbind(String name) {
         return bindings.containsKey(name);
     }
+    //gets the class of a binding
+    public String gettype(String name) {
+        return String.valueOf(bindings.get(name).getClass());
+    }
 }

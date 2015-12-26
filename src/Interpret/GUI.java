@@ -62,7 +62,7 @@ public class GUI {
         Output.setEditable(false);
 
         Input = new JTextField();
-        Input.setText(">>>");
+        Input.setText(">>> ");
         Input.setFont(new Font("Ayuthaya", Font.PLAIN, 12));
         Input.setForeground(Color.CYAN);
         Input.setBackground(Color.BLACK);
@@ -72,7 +72,7 @@ public class GUI {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER) {
                     String f = Input.getText() +"\n";
                     Output.append(f);
-                    Input.setText("");
+                    Input.setText(">>> ");
                 }
             }
         });

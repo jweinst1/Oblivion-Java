@@ -1,5 +1,5 @@
 package Interpret.Builtins;
-
+import java.util.ArrayList;
 /**
  * Created by Josh on 12/25/15.
  */
@@ -7,40 +7,45 @@ public class intcontainer {
 
     public boolean freeze;
     public int maxsize;
-    public int[] bin;
+    public ArrayList<Integer> bin;
 
     public intcontainer(int[] numbers, int max, boolean frozen) {
-        bin = numbers;
+        bin = new ArrayList<Integer>();
+        for(int elem : numbers) bin.add(elem);
         maxsize = max;
         freeze = frozen;
     }
     //resizes bin once and copies all new elements into bin
     public void add(int[] addition) {
-        int newsize = bin.length + addition.length;
-        int[] newlst = new int[newsize];
-        System.arraycopy(bin, 0, newlst, 0, bin.length);
-        System.arraycopy(addition, 0, newlst, bin.length, addition.length);
-        bin = newlst;
+        for(int elem : addition) bin.add(elem);
+    }
+
+    public void insert(int[] addition, int index) throws IndexOutOfBoundsException {
+        for(int elem : addition) bin.add(index, elem);
     }
 
     public int get(int index) {
-        return bin[index];
+        return bin.get(index);
     }
 
-    public void remove() {
-
+    public Object[] getarray() {
+        return bin.toArray();
     }
 
-    public boolean sameas(Object input) {
-        return bin.equals(input);
+    public void remove(int[] deletion) {
+        for(int elem : deletion) bin.remove(elem);
     }
 
-    public void check() {
+    public boolean sameas(intcontainer input) {
+        return bin.equals(input.bin);
+    }
 
+    public boolean check(int num) {
+        return bin.contains(num);
     }
 
     public int size() {
-        return bin.length;
+        return bin.size();
     }
 
     public int maxsize() {

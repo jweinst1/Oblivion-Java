@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed84fe5e-2f6e-424d-9f51-bb45a88626f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpret/Builtins/container.java" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/container.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Interpret/Processor.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Interpret/Interpret.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpret/GUI.java" afterPath="$PROJECT_DIR$/src/Interpret/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +32,10 @@
         <entry file="file://$PROJECT_DIR$/src/Interpret/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+              <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,20 +50,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intcontainer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="intcontainer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4599659">
-              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
               <folding>
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#731#732#0" expanded="true" />
-                <element signature="e#809#810#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#908#909#0" expanded="true" />
-                <element signature="e#941#942#0" expanded="true" />
-                <element signature="e#969#970#0" expanded="true" />
-                <element signature="e#999#1000#0" expanded="true" />
+                <element signature="e#515#516#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1048#1049#0" expanded="true" />
+                <element signature="e#1085#1086#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1183#1184#0" expanded="true" />
+                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,14 +156,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interpret.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Interpret/Interpret.java">
+      <file leaf-file-name="Processor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Interpret/Processor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.53662694">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
               <folding>
-                <element signature="e#138#139#0" expanded="true" />
-                <element signature="e#178#179#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,7 +202,6 @@
         <option value="$PROJECT_DIR$/interpreter/Interpret/Tokenizer.java" />
         <option value="$PROJECT_DIR$/interpreter/Interpret/Statement.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Interpret.java" />
-        <option value="$PROJECT_DIR$/src/Interpret/GUI.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Tokenizer.java" />
         <option value="$PROJECT_DIR$/src/Interpret/localdict.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Parser.java" />
@@ -198,6 +209,8 @@
         <option value="$PROJECT_DIR$/src/Interpret/Builtins/Utils.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Builtins/container.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
+        <option value="$PROJECT_DIR$/src/Interpret/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Interpret/Processor.java" />
       </list>
     </option>
   </component>
@@ -504,6 +517,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ed84fe5e-2f6e-424d-9f51-bb45a88626f9" name="Default" comment="" />
@@ -542,6 +558,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -558,7 +582,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -603,40 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/Interpret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Oblivion/GUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/Interpret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -647,16 +643,6 @@
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/Tokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,17 +704,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4599659">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
           <folding>
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interpret/Tokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interpret/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interpret/Processor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53662694">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

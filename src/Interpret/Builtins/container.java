@@ -6,12 +6,16 @@ package Interpret.Builtins;
  */
 public abstract class container {
 
-    public abstract void add();
+    public abstract void add(Object[] addition);
 
     public abstract void remove();
 
+    public abstract boolean sameas();
+
     public abstract void check();
 
-    public abstract void size();
+    public abstract int size();
+
+    public abstract int maxsize();
 
 }

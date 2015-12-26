@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed84fe5e-2f6e-424d-9f51-bb45a88626f9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/container.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpret/Builtins/container.java" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/container.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" afterPath="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,12 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intcontainer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="intcontainer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-              <folding />
+            <state vertical-scroll-proportion="0.4599659">
+              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding>
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
+                <element signature="e#969#970#0" expanded="true" />
+                <element signature="e#999#1000#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,17 +68,17 @@
         <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/container.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12776831">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,8 +195,9 @@
         <option value="$PROJECT_DIR$/src/Interpret/localdict.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Parser.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Arrayfuncs.java" />
-        <option value="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
+        <option value="$PROJECT_DIR$/src/Interpret/Builtins/Utils.java" />
         <option value="$PROJECT_DIR$/src/Interpret/Builtins/container.java" />
+        <option value="$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java" />
       </list>
     </option>
   </component>
@@ -692,10 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java">
+    <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -703,16 +711,25 @@
     <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/container.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/Interpret/Builtins/intcontainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12776831">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.4599659">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
+            <element signature="e#969#970#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

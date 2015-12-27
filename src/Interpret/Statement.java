@@ -11,9 +11,13 @@ public class Statement {
     public String[] funcs;
 
     //constructor
-    public Statement(String input, String type, String[] pros) {
+    public Statement(String input) {
         line = input;
-        tag = type;
-        funcs = pros;
+        tag = null;
+        funcs = new String[10];
+    }
+
+    public String Tostring() {
+        return line;
     }
 }

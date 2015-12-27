@@ -21,8 +21,7 @@ public class Tokenizer {
     }
 
     //top level function that categorizes a statement
-    public void Tokenize(String line) {
-        Statement command = new Statement(line);
+    public void Tokenize(Statement command) {
         if(create.matcher(command.line).matches()) command.settag("create");
         else if(connect.matcher(command.line).matches()) command.settag("connect");
         else if(add.matcher(command.line).matches()) command.settag("add");

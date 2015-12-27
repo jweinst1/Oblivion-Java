@@ -28,6 +28,8 @@ public class Processor {
         linecount += 1;
         logcommand(line);
         line = removearrows(line);
+        Statement sline = new Statement(line);
+        token.Tokenize(sline);
         }
     //logs every line made at the command line
     public void logcommand(String line) {
@@ -44,7 +46,7 @@ public class Processor {
     public String removearrows(String line) {
         Matcher raw = Pattern.compile("^>>> (.*)$").matcher(line);
         if(raw.matches()) return raw.group(1);
-        return "Improper String";
+        else return line;
     }
 
 }

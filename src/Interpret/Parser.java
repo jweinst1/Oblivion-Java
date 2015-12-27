@@ -10,6 +10,31 @@ import java.util.ArrayList;
  */
 public class Parser {
 
+    public Parser() {
+
+    }
+    //main function of parser
+    public void Parse(Statement command, localdict binder) {
+        switch (command.tag) {
+            case "create":
+                break;
+            case "add":
+                break;
+            case "connect":
+                break;
+            case "extend":
+                break;
+            case "display":
+                break;
+            case "remove":
+                break;
+            case "assign":
+                break;
+            default:
+                break;
+        }
+    }
+
     public static void create_intcontainer(String name, String container, localdict storage) {
         Pattern intharvest = Pattern.compile("([0-9]+)");
         Matcher numbers = intharvest.matcher(container);

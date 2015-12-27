@@ -8,16 +8,20 @@ public class Statement {
 
     public String line;
     public String tag;
-    public String[] funcs;
+    public String[] info;
 
     //constructor
     public Statement(String input) {
         line = input;
         tag = null;
-        funcs = new String[10];
+        info = new String[10];
     }
 
     public String Tostring() {
         return line;
+    }
+
+    public void settag(String label) {
+        tag = label;
     }
 }

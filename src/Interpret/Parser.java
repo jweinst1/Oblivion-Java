@@ -10,13 +10,16 @@ import java.util.ArrayList;
  */
 public class Parser {
 
+    protected Pattern intcont = Pattern.compile("^i\\[([0-9 ,]+)\\]i$");
+    protected Pattern strcont = Pattern.compile("^s\\[([a-zA-Z ,]+)\\]s$");
+
     public Parser() {
 
     }
     //main function of parser
     public void Parse(Statement command, localdict binder) {
         switch (command.tag) {
-            case "create":
+            case "create": ParseCreate(command, binder);
                 break;
             case "add":
                 break;
@@ -43,6 +46,14 @@ public class Parser {
             String num = numbers.group();
             template.add(Integer.parseInt(num));
         }
+
+    }
+
+    public void ParseCreate(Statement command, localdict binder) {
+
+    }
+
+    public void ParseAdd(Statement command, localdict binder) {
 
     }
 }

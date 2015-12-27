@@ -22,7 +22,10 @@ public class Tokenizer {
 
     //top level function that categorizes a statement
     public void Tokenize(Statement command) {
-        if(create.matcher(command.line).matches()) command.settag("create");
+        if(create.matcher(command.line).matches()) {
+            command.settag("create"); 
+            attachname(command, create);
+        }
         else if(connect.matcher(command.line).matches()) command.settag("connect");
         else if(add.matcher(command.line).matches()) command.settag("add");
         else if(extend.matcher(command.line).matches()) command.settag("extend");
@@ -30,6 +33,12 @@ public class Tokenizer {
         else if(remove.matcher(command.line).matches()) command.settag("remove");
         else if(display.matcher(command.line).matches()) command.settag("display");
         else System.out.println("Not a Valid Statement.");
+    }
+    //uses a capturing group to attach a name to a statement object
+    public void attachname(Statement command, Pattern capture) {
+        Matcher temp = capture.matcher(command.line);
+        if(temp.matches()) command.info[0] = temp.group(1);
+        else command.info[0] = "NA";
     }
 
     //checks if create statement

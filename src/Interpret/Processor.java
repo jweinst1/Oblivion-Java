@@ -15,6 +15,7 @@ public class Processor {
     public int linecount;
     public boolean running;
     public Tokenizer token;
+    public Parser parse;
 
     public Processor() {
         globals = new localdict();
@@ -22,6 +23,7 @@ public class Processor {
         linecount = 0;
         running = true;
         token = new Tokenizer();
+        parse = new Parser();
     }
 
     public void InterpretLine(String line) {
@@ -30,6 +32,7 @@ public class Processor {
         line = removearrows(line);
         Statement sline = new Statement(line);
         token.Tokenize(sline);
+        parse.Parse(sline, globals);
         }
     //logs every line made at the command line
     public void logcommand(String line) {

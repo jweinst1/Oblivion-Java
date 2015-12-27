@@ -10,8 +10,9 @@ import java.util.ArrayList;
  */
 public class Parser {
 
-    protected Pattern intcont = Pattern.compile("^i\\[([0-9 ,]+)\\]i$");
+    protected Pattern intcont = Pattern.compile("i\\[([0-9 ,]+)\\]i");
     protected Pattern strcont = Pattern.compile("^s\\[([a-zA-Z ,]+)\\]s$");
+    protected Pattern turing = Pattern.compile("^t\\[([0-9]+)\\]t$");
 
     public Parser() {
 
@@ -27,7 +28,7 @@ public class Parser {
                 break;
             case "extend":
                 break;
-            case "display":
+            case "display": ParseDisplay(command, binder);
                 break;
             case "remove":
                 break;
@@ -38,22 +39,37 @@ public class Parser {
         }
     }
 
-    public static void create_intcontainer(String name, String container, localdict storage) {
-        Pattern intharvest = Pattern.compile("([0-9]+)");
-        Matcher numbers = intharvest.matcher(container);
-        ArrayList<Integer> template = new ArrayList<Integer>();
-        while(numbers.find()) {
-            String num = numbers.group();
-            template.add(Integer.parseInt(num));
+    public void create_intcontainer(Statement command, localdict storage) {
+        Matcher inttemp = intcont.matcher(command.line);
+        if(inttemp.find()) {
+            int[] gotints;
+            gotints = extractints(inttemp.group(1));
+            intcontainer newobj = new intcontainer(gotints, 0, false);
+            storage.addbind(command.info[0], newobj);
         }
+    }
+
+    public void create_strcontainer(Statement command, localdict storage) {
+
+    }
+
+    public void ParseDisplay(Statement command, localdict binder) {
 
     }
 
     public void ParseCreate(Statement command, localdict binder) {
-
+        if(intcont.matcher(command.line).matches()) create_intcontainer(command, binder);
+        else if(strcont.matcher(command.line).matches()) create_strcontainer(command, binder);
     }
 
     public void ParseAdd(Statement command, localdict binder) {
 
+    }
+    // extracts the integers from a string.
+    public int[] extractints(String target) {
+        String[] nums = target.split(", ");
+        int[] numlst = new int[nums.length];
+        for(int i=0;i<numlst.length;i++) numlst[i] = Integer.parseInt(nums[i]);
+        return numlst;
     }
 }

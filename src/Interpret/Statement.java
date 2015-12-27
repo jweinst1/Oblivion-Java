@@ -25,3 +25,9 @@ public class Statement {
         tag = label;
     }
 }
+
+/*
+Info key:
+info[0]: name
+info[1]: location
+ */

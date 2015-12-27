@@ -29,5 +29,5 @@ public class Statement {
 /*
 Info key:
 info[0]: name
-info[1]: location
+info[1]: return value
  */

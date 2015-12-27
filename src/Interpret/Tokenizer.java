@@ -21,9 +21,9 @@ public class Tokenizer {
     }
 
     //top level function that categorizes a statement
-    public void Tokenize(Statement command) {
+    public void Tokenize(Statement command, localdict binder) {
         if(create.matcher(command.line).matches()) {
-            command.settag("create"); 
+            command.settag("create");
             attachname(command, create);
         }
         else if(connect.matcher(command.line).matches()) command.settag("connect");
@@ -31,7 +31,10 @@ public class Tokenizer {
         else if(extend.matcher(command.line).matches()) command.settag("extend");
         else if(assign.matcher(command.line).matches()) command.settag("assign");
         else if(remove.matcher(command.line).matches()) command.settag("remove");
-        else if(display.matcher(command.line).matches()) command.settag("display");
+        else if(display.matcher(command.line).matches()) {
+            command.settag("display");
+            attachreturn(command, display, binder);
+        }
         else System.out.println("Not a Valid Statement.");
     }
     //uses a capturing group to attach a name to a statement object
@@ -39,6 +42,12 @@ public class Tokenizer {
         Matcher temp = capture.matcher(command.line);
         if(temp.matches()) command.info[0] = temp.group(1);
         else command.info[0] = "NA";
+    }
+
+    public void attachreturn(Statement command, Pattern capture, localdict binder) {
+        Matcher temp = capture.matcher(command.line);
+        if(temp.matches()) command.info[1] = String.valueOf(binder.getbind(temp.group(1)));
+        else command.info[1] = "NA";
     }
 
     //checks if create statement

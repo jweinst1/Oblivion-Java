@@ -31,7 +31,7 @@ public class Processor {
         logcommand(line);
         line = removearrows(line);
         Statement sline = new Statement(line);
-        token.Tokenize(sline);
+        token.Tokenize(sline, globals);
         parse.Parse(sline, globals);
         }
     //logs every line made at the command line

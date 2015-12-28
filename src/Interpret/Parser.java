@@ -2,8 +2,11 @@ package Interpret;
 import Interpret.Tokenizer;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.regex.*;
 import Interpret.Builtins.*;
+import Interpret.Utils.IntAssembler;
+
 import java.util.ArrayList;
 
 /**
@@ -16,15 +19,26 @@ public class Parser {
     public boolean inputmode;
     public int[] numberstage;
     public HashMap<String, Object> storage;
+    public IntAssembler numcreator;
 
     public Parser() {
         numbermode = false;
         inputmode = false;
         storage = new HashMap<String, Object>();
-        numberstage = new int[10];
+        //used for number memory storage
+        numberstage = new int[100];
+    }
+
+    public void changeinput(boolean state) {
+        inputmode = state;
     }
 
     public Object Parse(Token[] tokens) {
+        for(int i=0;i<tokens.length;i++) {
+            if(Objects.equals(tokens[i].getTag(), "START INPUT")) changeinput(true);
+            else if(Objects.equals(tokens[i].getTag(), "END INPUT")) changeinput(false);
+            else continue;
+        }
         return 0;
     }
 

@@ -10,6 +10,10 @@ public abstract class range {
     public int size;
 
     public abstract Object get(int index);
+
     public abstract int length();
+
+    public abstract boolean contains(Object elem);
+
     public abstract String Tostring();
 }

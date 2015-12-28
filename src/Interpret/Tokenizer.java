@@ -1,78 +1,72 @@
 package Interpret;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import Interpret.Statement;
 import Interpret.localdict;
+import Interpret.Token;
 
 public class Tokenizer {
-    //token patterns compiled initially to improve spped
-    protected static Pattern add = Pattern.compile("^add (.+) to (.+)$");
-    protected static Pattern create = Pattern.compile("^create (.+) (.+)$");
-    protected static Pattern connect = Pattern.compile("^connect (.+) to (.+)$");
-    protected static Pattern extend = Pattern.compile("^extend (.+) by (.+)$");
-    protected static Pattern assign = Pattern.compile("^assign (.+) to (.+)$");
-    protected static Pattern remove = Pattern.compile("^remove (.+) from (.+)$");
-    protected static Pattern display = Pattern.compile("^display (.+)$");
 
-    //constructor
+    public boolean inputmode;
+    public ArrayList<String> log;
+
     public Tokenizer() {
-
+        inputmode = false;
+        log = new ArrayList<String>();
     }
 
-    //top level function that categorizes a statement
-    public void Tokenize(Statement command, localdict binder) {
-        if(create.matcher(command.line).matches()) {
-            command.settag("create");
-            attachname(command, create);
+    public void inputchange(boolean state) {
+        inputmode = state;
+    }
+
+    public Token[] Tokenize(String line) {
+        char[] syms = line.toCharArray();
+        Token[] tokens = new Token[syms.length];
+        for(int i=0;i<syms.length;i++) {
+            switch (syms[i]) {
+                case '(': inputchange(true);
+                    tokens[i] = new Token("START INPUT", syms[i]);
+                    break;
+                case ')': inputchange(false);
+                    tokens[i] = new Token("END INPUT", syms[i]);
+                    break;
+                case '-': if(inputmode) tokens[i] = new Token("SUBTRACT", syms[i]);
+                    else tokens[i] = new Token("CARRY", syms[i]);
+                    break;
+                case '>': if(inputmode) tokens[i] = new Token("GREATER", syms[i]);
+                    else tokens[i] = new Token("APPLY", syms[i]);
+                    break;
+                case '+': if(inputmode) tokens[i] = new Token("ADD", syms[i]);
+                    break;
+                case '@': if(inputmode) tokens[i] = new Token("RETURN", syms[i]);
+                    else tokens[i] = new Token("DISPLAY", syms[i]);
+                    break;
+                case '0': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '1': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '2': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '3': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '4': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '5': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '6': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '7': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '8': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                case '9': if(inputmode) tokens[i] = new Token("INT", syms[i]);
+                    break;
+                default:
+                    break;
+            }
         }
-        else if(connect.matcher(command.line).matches()) command.settag("connect");
-        else if(add.matcher(command.line).matches()) command.settag("add");
-        else if(extend.matcher(command.line).matches()) command.settag("extend");
-        else if(assign.matcher(command.line).matches()) command.settag("assign");
-        else if(remove.matcher(command.line).matches()) command.settag("remove");
-        else if(display.matcher(command.line).matches()) {
-            command.settag("display");
-            attachreturn(command, display, binder);
-        }
-        else System.out.println("Not a Valid Statement.");
+        return tokens;
     }
-    //uses a capturing group to attach a name to a statement object
-    public void attachname(Statement command, Pattern capture) {
-        Matcher temp = capture.matcher(command.line);
-        if(temp.matches()) command.info[0] = temp.group(1);
-        else command.info[0] = "NA";
-    }
-
-    public void attachreturn(Statement command, Pattern capture, localdict binder) {
-        Matcher temp = capture.matcher(command.line);
-        if(temp.matches()) command.info[1] = String.valueOf(binder.getbind(temp.group(1)));
-        else command.info[1] = "NA";
-    }
-
-    //checks if create statement
-    public static boolean iscreate(String test) {
-        Matcher Cstate = create.matcher(test);
-        return Cstate.matches();
-    }
-    //checks if assign statement
-    public static boolean isassign(String test) {
-        Matcher Cstate = assign.matcher(test);
-        return Cstate.matches();
-    }
-
-    public static boolean isIntContainer(String test) {
-        Pattern Icont = Pattern.compile("i\\[.*\\]i");
-        Matcher temp = Icont.matcher(test);
-        return temp.matches();
-    }
-
-    public void matchline(String line) {
-
-    }
-
-    /*public static Statement tokenize(String input) {
-
-    }*/
-
 }

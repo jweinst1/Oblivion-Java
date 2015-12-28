@@ -14,4 +14,20 @@ public class IntAssembler {
         memory = new char[100];
         mode = false;
     }
+
+    public void addintstr(char num){
+        currentint.append(String.valueOf(num));
+    }
+
+    public String getstr() {
+        return currentint.toString();
+    }
+
+    public int getint() {
+        return Integer.parseInt(currentint.toString());
+    }
+
+    public void clearintstr() {
+        currentint = new StringBuffer();
+    }
 }

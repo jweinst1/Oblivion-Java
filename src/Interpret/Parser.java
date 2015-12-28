@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.regex.*;
 import Interpret.Builtins.*;
 import Interpret.Utils.IntAssembler;
+import Interpret.Utils.NumSet;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class Parser {
     public int[] numberstage;
     public HashMap<String, Object> storage;
     public IntAssembler numcreator;
+    public NumSet numchecker;
 
     public Parser() {
         numbermode = false;
@@ -27,6 +29,7 @@ public class Parser {
         storage = new HashMap<String, Object>();
         //used for number memory storage
         numberstage = new int[100];
+        numchecker = new NumSet();
     }
 
     public void changeinput(boolean state) {

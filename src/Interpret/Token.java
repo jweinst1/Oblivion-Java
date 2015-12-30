@@ -6,15 +6,15 @@ package Interpret;
  */
 public class Token {
 
-    public char symbol;
+    public String symbol;
     public String tag;
 
-    public Token(String label, char mark) {
+    public Token(String label, String mark) {
         symbol = mark;
         tag = label;
     }
 
-    public char getSymbol() {
+    public String getSymbol() {
         return symbol;
     }
 

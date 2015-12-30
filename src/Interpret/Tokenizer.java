@@ -9,64 +9,36 @@ import Interpret.Token;
 
 public class Tokenizer {
 
-    public boolean inputmode;
-    public ArrayList<String> log;
+    public ArrayList<Token[]> log;
+    protected Pattern intnum = Pattern.compile("[0-9]+");
+    protected Pattern str = Pattern.compile("[a-zA-Z]+");
 
     public Tokenizer() {
-        inputmode = false;
-        log = new ArrayList<String>();
+        log = new ArrayList<Token[]>();
     }
 
-    public void inputchange(boolean state) {
-        inputmode = state;
-    }
+
 
     public Token[] Tokenize(String line) {
-        char[] syms = line.toCharArray();
+        String[] syms = line.split(" ");
         Token[] tokens = new Token[syms.length];
         for(int i=0;i<syms.length;i++) {
-            switch (syms[i]) {
-                case '(': inputchange(true);
-                    tokens[i] = new Token("START INPUT", syms[i]);
-                    break;
-                case ')': inputchange(false);
-                    tokens[i] = new Token("END INPUT", syms[i]);
-                    break;
-                case '-': if(inputmode) tokens[i] = new Token("SUBTRACT", syms[i]);
-                    else tokens[i] = new Token("CARRY", syms[i]);
-                    break;
-                case '>': if(inputmode) tokens[i] = new Token("GREATER", syms[i]);
-                    else tokens[i] = new Token("APPLY", syms[i]);
-                    break;
-                case '+': if(inputmode) tokens[i] = new Token("ADD", syms[i]);
-                    break;
-                case '@': if(inputmode) tokens[i] = new Token("RETURN", syms[i]);
-                    else tokens[i] = new Token("DISPLAY", syms[i]);
-                    break;
-                case '0': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '1': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '2': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '3': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '4': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '5': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '6': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '7': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '8': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                case '9': if(inputmode) tokens[i] = new Token("INT", syms[i]);
-                    break;
-                default:
-                    break;
-            }
+            if(syms[i].charAt(0) == '+' && syms[i].length() > 1) tokens[i] = new Token("ADD", syms[i]);
+            else if(syms[i].equals("->")) tokens[i] = new Token("PROCEED", syms[i]);
+            else if(syms[i].equals("@")) tokens[i] = new Token("RETURN", syms[i]);
+            else if(syms[i].charAt(0) == '~' && syms[i].length() > 1) tokens[i] = new Token("BIND", syms[i]);
+            else if(syms[i].charAt(0) == '-' && syms[i].length() > 1) tokens[i] = new Token("SUB", syms[i]);
+            else if(syms[i].charAt(0) == '*' && syms[i].length() > 1) tokens[i] = new Token("MUL", syms[i]);
+            else if(syms[i].charAt(0) == '/' && syms[i].length() > 1) tokens[i] = new Token("DIV", syms[i]);
+            else if(syms[i].equals("(")) tokens[i] = new Token("SPUT", syms[i]);
+            else if(syms[i].equals(")")) tokens[i] = new Token("EPUT", syms[i]);
+            else tokens[i] = new Token("PASS", syms[i]);
         }
+        log.add(tokens);
         return tokens;
+    }
+
+    public boolean equalsregex(String input, Pattern test) {
+        return test.matcher(input).matches();
     }
 }

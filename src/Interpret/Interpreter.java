@@ -8,7 +8,7 @@ import java.util.regex.*;
  * Created by Josh on 12/26/15.
  * Main Interpreter object
  */
-public class Processor {
+public class Interpreter {
 
     public localdict globals;
     public ArrayList<String> history;
@@ -16,23 +16,24 @@ public class Processor {
     public boolean running;
     public Tokenizer token;
     public Parser parse;
+    public Assembler assemble;
 
-    public Processor() {
+    public Interpreter() {
         globals = new localdict();
         history = new ArrayList<String>();
         linecount = 0;
         running = true;
         token = new Tokenizer();
-        parse = new Parser();
+        assemble = new Assembler();
     }
 
-    public void InterpretLine(String line) {
+    public String InterpretLine(String line) {
         linecount += 1;
         logcommand(line);
         line = removearrows(line);
-        Statement sline = new Statement(line);
-        token.Tokenize(sline, globals);
-        parse.Parse(sline, globals);
+        Token[] pieces = token.Tokenize(line);
+        String result = assemble.Assemble(pieces);
+        return result;
         }
     //logs every line made at the command line
     public void logcommand(String line) {

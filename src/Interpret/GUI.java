@@ -1,4 +1,5 @@
 package Interpret;
+import Interpret.Interpreter;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ public class GUI {
 
     private JFrame frame;
     private JTextField Input;
+    private Interpreter machine;
 
     /**
      * Launch the application.
@@ -48,6 +50,8 @@ public class GUI {
         frame.getContentPane().setLayout(null);
         frame.setTitle("Oblivion");
 
+        machine = new Interpreter();
+
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBackground(Color.BLACK);
         scrollPane.setAutoscrolls(true);
@@ -72,6 +76,8 @@ public class GUI {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER) {
                     String f = Input.getText() +"\n";
                     Output.append(f);
+                    String result = machine.InterpretLine(f);
+                    Output.append(result);
                     Input.setText(">>> ");
                 }
             }

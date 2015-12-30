@@ -1,7 +1,7 @@
 # Oblivion
 
 The Oblivion Language
-#####NOTE: This is the Java Implementation, which is partial and be depreciated once the swift implementation is complete.
+#####NOTE: This is the Java Implementation, which is partial and will be depreciated once the swift implementation is complete.
 
 For the Interpreter code, go [here](https://github.com/jweinst1/Oblivion-Java/tree/master/src/Interpret)
 
